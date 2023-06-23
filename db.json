@@ -1,0 +1,20 @@
+{
+  "usuario": [
+    {
+      "id": 1,
+      "nome": "Josue",
+      "sobrenome": "Trombim",
+      "email": "josue.trombim@bol.com",
+      "profissao": "Desenvolvedor",
+      "idade": 26
+    },
+    {
+      "id": 2,
+      "nome": "Joao",
+      "sobrenome": "Rodrigues",
+      "email": "joao.rodrigues@bol.com",
+      "profissao": "Desenvolvedor",
+      "idade": "30"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+<mat-toolbar>{{(usuario && usuario.id)?'Editar Usuario' : 'Cadastrar Usuario'}}</mat-toolbar>
+
+
+<div class="componente-container">
+    <form class="form-padrao" *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && salvar()" novalidate>
+        <mat-form-field>
+            <input matInput placeholder="Id" formControlName="id" readonly>
+            <mat-error>Campo Obrigatório</mat-error>
+          </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Nome" formControlName="nome" required autocomplete="off">
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Sobrenome" formControlName="sobrenome" required autocomplete="off">
+            <mat-error>Campo Obrigatório</mat-error>
+          </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email" required autocomplete="off">
+            <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Profissao" formControlName="profissao" required autocomplete="off">
+            <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Idade" formControlName="idade" required autocomplete="off">
+            <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+        <div class="linha-botoes">
+            <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Salvar</button>
+            <button *ngIf="usuario && usuario.id" type="button" color="warn" mat-raised-button (click)="deletar()">Deletar</button>
+            <button type="button" mat-raised-button routerLink="/usuario">Cancelar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<mat-toolbar> Lista de Usuarios </mat-toolbar>
+
+<ng-template #carregando>
+    <mat-spinner></mat-spinner>
+</ng-template>
+
+<div class="componente-container">
+    <div *ngIf="usuarios$ | async as usuario; else carregando">
+        <table mat-table [dataSource]="usuario">
+            <ng-container matColumnDef="nome">
+                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                <td mat-cell *matCellDef="let usuario">  
+                    <a routerLink="/usuario/editar/{{usuario.id}}">{{usuario.nome}}</a>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="sobrenome">
+                <th mat-header-cell *matHeaderCellDef> Sobrenome </th>
+                    <td mat-cell *matCellDef="let usuario">
+                        <a routerLink="/usuario/editar/{{usuario.id}}">{{usuario.sobrenome}}</a>
+                    </td>
+              </ng-container>
+          
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                    <td mat-cell *matCellDef="let usuario"> 
+                        <a routerLink="/usuario/editar/{{usuario.id}}">{{usuario.email}}</a>
+                    </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="colunasTabela"></tr>
+            <tr mat-row *matRowDef="let row; columns: colunasTabela;"></tr>
+          </table>        
+    </div>
+    <div class="linha-botoes">
+        <button mat-raised-button color="primary" routerLink="/usuario/cadastrar">Cadastrar</button>
+    </div>
+</div>
