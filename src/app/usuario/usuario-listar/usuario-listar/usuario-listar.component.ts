@@ -10,7 +10,7 @@ import { UsuarioService } from '../../usuario.service';
 })
 export class UsuarioListarComponent  implements OnInit {
     
-  usuarios$: Observable<Usuario[]> | undefined;
+  usuarios$!: Observable<Usuario[]>;
 
   colunasTabela = ['nome','sobrenome','email']
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from '../../usuario.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { Usuario } from '../../usuario.model';
   templateUrl: './usuario-cadastrar-editar.component.html',
   styleUrls: ['./usuario-cadastrar-editar.component.scss']
 })
-export class UsuarioCadastrarEditarComponent {
+export class UsuarioCadastrarEditarComponent implements OnInit{
 
   formGroup! : FormGroup;
   usuario!: Usuario;
