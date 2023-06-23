@@ -1,5 +1,7 @@
+# Instruções para rodar o projeto
+
 # NPM
-Instalar o node primeiro escolhendo a versão no site(https://nodejs.org/en/download)
+Instalar o node primeiro escolhendo a versão para o seu computador no site(https://nodejs.org/en/download)
 
 # Json-Server
 Para simular o back end é necessario a instalação do Json-Server, na pasta do projeto abrir o powershell e digitar `npm install -g json-server` apos instalar é necessario inciar o servidor com o comando `json-server --watch db.json` onde o 
